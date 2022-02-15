@@ -18,9 +18,33 @@ h1 {
         background-color: white;
 }
 
+h3 {
+    text-transform: capitalize;
+}
+
 table {
     margin: auto;
             width: 50%;
             padding: 10px;
             text-align: center;
+}
+
+#nailRed {
+    color: red;
+    background-color: pink;
+}
+
+#nailBlue {
+    color: blue;
+    background-color: skyblue;
+}
+
+#nailGreen {
+    color: green;
+    background-color:lightgreen;
+}
+
+.square {
+    height: 40px;
+    width: 40px;
 }

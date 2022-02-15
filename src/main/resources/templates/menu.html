@@ -6,10 +6,52 @@
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
+
 <h1>My Super Fancy Spa</h1>
+
 <div id = "clientProfile">
+    <h2>My Profile</h2>
+    <p th:text="${name}"></p>
+    <p th:text="${skintype}"></p>
+    <p th:text="${manipedi}"></p>
 </div>
+
 <div id = "servicesMenu">
+    <h3>Service Menu</h3>
+    <table>
+
+        <th:block th:each="facial : ${appropriateFacials}">
+            <tr>
+                <td th:text="${facial}"></td>
+            </tr>
+        </th:block>
+
+    </table>
 </div>
+<div>
+    <h3 th:text="${manipedi}"></h3>
+
+    <div th:if="${manipedi.equals('manicure')}">
+        <p th:replace="fragments :: manicureDescription"></p>
+    </div>
+
+    <div th:if="${manipedi.equals('pedicure')}">
+        <p th:replace="fragments :: pedicureDescription"></p>
+    </div>
+
+    <div th:if="${manipedi.equals('both')}">
+        <p th:replace="fragments :: manicureDescription"></p>
+        <p th:replace="fragments :: pedicureDescription"></p>
+    </div>
+</div>
+<div>
+    <footer>
+        <h3>Available nail polishes</h3>
+        <div id = "nailRed" class = 'square'>Red</div>
+        <div id = "nailGreen" class = 'square'>Green</div>
+        <div id = "nailBlue" class = 'square'>Blue</div>
+    </footer>
+</div>
+
 </body>
 </html>
