@@ -5,8 +5,19 @@
     <title></title>
 </head>
 <body>
-    <h1 th:text = "${'Hello, '+ username + '!'}"  ></h1>
     <a th:href = "@{/}">Service Selection</a>
+    <table>
+        <tr>
+            <th>Username</th>
+        </tr>
+        <th:block th:each="user : ${userData}">
+            <tr>
+                <td th:text="${user.getUsername()}"></td>
+                <td><a th:href = "@{/user/{userId} (userId = ${user.getId()})}">Details</a></td>
+            </tr>
+        </th:block>
+
+    </table>
 
 </body>
 </html>

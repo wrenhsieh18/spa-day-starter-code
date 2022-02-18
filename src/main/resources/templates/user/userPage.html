@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+</head>
+<body>
+    <h1 th:text = "${'Hello, '+ user.getUsername() + '!'}"  ></h1>
+    <h2 th:text = "${'Your email, ' + user.getEmail() + ', was registered on ' + user.getDate() + '.'}"></h2>
+    <div th:replace = "fragments :: returnLinks"></div>
+
+</body>
+</html>

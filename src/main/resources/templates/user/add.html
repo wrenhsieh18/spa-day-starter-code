@@ -8,11 +8,11 @@
 
 <form method="post" action = "/user/add">
     <label>Username
-        <input type = "text" name = "username" th:value = "${newUser.getUsername()}">
+        <input type = "text" name = "username" th:value = "${username}">
     </label>
 
     <label>Email
-        <input type = "email" name = "email" th:value = "${newUser.getEmail()}">
+        <input type = "email" name = "email" th:value = "${email}">
     </label>
 
     <label>Password
