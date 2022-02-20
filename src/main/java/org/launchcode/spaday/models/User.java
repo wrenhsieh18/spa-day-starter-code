@@ -15,6 +15,9 @@ public class User {
     @Size(min = 5, message = "Password must contain at least 6 characters.")
     private String password;
 
+    @NotNull( message = "Passwords do not match")
+    private String verifyPassword;
+
     public User(String username, String email, String password) {
         this();
         this.username = username;
@@ -23,6 +26,21 @@ public class User {
     }
 
     public User() {
+    }
+
+    private void checkPassword() {
+        if ( this.password != null && this.verifyPassword != null && !this.password.equals(this.verifyPassword) ) {
+            this.verifyPassword = null;
+        }
+    }
+
+    public String getVerifyPassword() {
+        return verifyPassword;
+    }
+
+    public void setVerifyPassword(String verifyPassword) {
+        this.verifyPassword = verifyPassword;
+        this.checkPassword();
     }
 
     public String getUsername() {
@@ -47,5 +65,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+        this.checkPassword();
     }
 }
